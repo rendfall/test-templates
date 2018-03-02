@@ -1,6 +1,6 @@
 # Templates
 
-Tiny library to generate template with data binding.
+> Tiny library to generate template with data binding.
 
 ## Usage
 
@@ -13,15 +13,20 @@ Template:
     <p>{{ nodef }}</p>
 </div>
 ```
+
 Render:
 
-```Javascript
-    var tmp = new Template();
-    var $content = document.getElementById('content');
-    var html = content.innerHTML;
+```js
+var $content = document.getElementById('content');
 
-    $content.innerHTML = tmp.render(html, {
-        title: 'This is an example',
-        link: 'http://www.wallpapersxl.com/thumb/twin-peaks-another-place-black-lodge-waiting-room-white-image-198946.jpg'
-    });
+$content.innerHTML = Template.compile($content.innerHTML, {
+    title: 'This is an example',
+    link: 'http://fakeimg.pl/250x100/ff0000/'
+});
+```
+
+## Unit tests
+
+```
+$ npm test
 ```

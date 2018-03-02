@@ -3,7 +3,8 @@ module.exports = {
 
     output: {
         path: __dirname + '/dist/',
-        filename: 'templates.js'
+        filename: 'templates.js',
+        libraryTarget: 'umd'
     },
 
     module: {
