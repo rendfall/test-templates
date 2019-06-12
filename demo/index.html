@@ -1,26 +1,27 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Templates - demo</title>
-    </head>
+<head>
+    <meta charset="utf-8"/>
+    <title>Templates - demo</title>
+</head>
 <body>
-    <div id="content">
-        <h1>{{ title }}</h1>
-        <img src="{{ link }}" />
-        <p>{{ nodef }}</p>
-    </div>
 
-    <script src="templates.js"></script>
-    <script>
-        // Example:
-        var tmp = new Template();
-        var $content = document.getElementById('content');
-        var html = content.innerHTML;
+<div id="content">
+    <h1>{{ title }}</h1>
+    <img src="{{ link }}"/>
+    <p>{{ no-def }}</p>
+</div>
 
-        $content.innerHTML = tmp.render(html, {
-            title: 'This is an example',
-            link: 'http://www.wallpapersxl.com/thumb/twin-peaks-another-place-black-lodge-waiting-room-white-image-198946.jpg'
-        });
-    </script>
+<script src="../dist/templates.js"></script>
+<script>
+    // Example:
+    var $content = document.getElementById('content');
+
+    $content.innerHTML = Template.compile($content.innerHTML, {
+        title: 'This is an example',
+        link: 'http://fakeimg.pl/250x100/ff0000/'
+    });
+</script>
+
 </body>
 </html>

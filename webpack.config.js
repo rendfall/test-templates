@@ -3,19 +3,18 @@ module.exports = {
 
     output: {
         path: __dirname + '/dist/',
-        filename: 'templates.js'
+        filename: 'templates.js',
+        libraryTarget: 'umd'
     },
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015', 'stage-0']
-                }
-            }
+                use: 'babel-loader',
+                include: __dirname + '/src',
+            },
         ]
     }
 };
